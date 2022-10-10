@@ -26,7 +26,17 @@ form label {
 
 button {
     margin-left: 50%;
+    cursor: pointer;
+    border-radius: .3em;
+    padding: .75em;
+    background-color: aqua;
+    color: blue;
 }
+
+button:hover {
+    background-color: blue;
+    color: aqua;
+}   
 
 h1 {
     text-align: center;
