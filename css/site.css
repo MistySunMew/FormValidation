@@ -14,16 +14,24 @@ form label {
 }
 
 @media only screen and (max-width: 475px) {
-    label {
+    form label {
         text-align: left;
         display: block;
     }
     
-    form button{
+    button{
         margin-left: 0%;
     }
 }
 
-form button {
+button {
     margin-left: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
 }
