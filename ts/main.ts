@@ -7,6 +7,23 @@ function main():void {
     resetErrorMessages();
     isTextPresent("first-name", "First name is required");
     isTextPresent("last-name", "Last name is required");
+    
+    //Validate date
+    let dobBox = <HTMLInputElement>document.getElementById("dob");
+    let dob = dobBox.value;
+    if(!isValidDate(dob)) {
+        dobBox.nextElementSibling.innerHTML = "Invalid Date. Format should be mm/dd/yyyy";
+    }
+}
+
+/**
+ * tests to see if a date is in the mm/dd/yyyy or m/d/yyyy format
+ * @param input string you want to test for a date
+ * @returns wether or not the input is a date
+ */
+function isValidDate(input:string):boolean {
+    let pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g
+    return pattern.test(input);
 }
 
 /**
@@ -38,6 +55,5 @@ function isTextPresent(id:string, errMsg:string):boolean {
         textBox.nextElementSibling.innerHTML = errMsg;
         return false;
     }
-
     return true;
 }
